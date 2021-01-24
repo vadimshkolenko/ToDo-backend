@@ -62,9 +62,10 @@ exports.register = async (req, res) => {
 exports.logout = (req, res) => {
   //исправить
   // res.status(200).json({ token: null })
-  const token = jwt.sign({}, process.env.JWT, { expiresIn: 0 })
-
-  res.status(200).json({
-    token: `Bearer ${token}`
-  })
+  req.logout()
+  // const token = jwt.sign({}, process.env.JWT, { expiresIn: 0 })
+  //
+  // res.status(200).json({
+  //   token: `Bearer ${token}`
+  // })
 }
